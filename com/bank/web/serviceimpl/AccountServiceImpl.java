@@ -21,6 +21,7 @@ public class AccountServiceImpl implements Accountservice{
 	acc.setAccountNum(createAccountNum());
 	acc.setMoney(money);
 	acc.setRegDate(findDate());
+	accounts.add(acc);
 	}
 
 	@Override

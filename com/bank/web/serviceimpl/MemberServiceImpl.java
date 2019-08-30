@@ -15,6 +15,7 @@ public class MemberServiceImpl implements MemberService{
 	private List<EmployeeBean>employees;
 	public MemberServiceImpl() {
 		customers = new ArrayList<>();
+		employees = new ArrayList<>();
 	}
 	
 	@Override

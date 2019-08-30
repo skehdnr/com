@@ -6,7 +6,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+import com.bank.web.service.Accountservice;
+import com.bank.web.serviceimpl.AccountServiceImpl;
 import com.bank.web.domains.AccountBean;
 
 @WebServlet("/acconut.do")
@@ -15,10 +16,11 @@ public class AccountController extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("확이ㅣㅣㅣㅣㅣㅣㄴ");
-		
+		Accountservice service = new AccountServiceImpl();
+		String money = request.getParameter("money");
 		
 		AccountBean a = new AccountBean();
-		
+		service.createAccount(money);
 		
 		System.out.println("계좌정보"+a.toString());
 		response.getWriter().append("Served at: ").append(request.getContextPath());

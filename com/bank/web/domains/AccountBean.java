@@ -1,6 +1,8 @@
 package com.bank.web.domains;
 
-public class AccountBean {
+import java.io.Serializable;
+
+public class AccountBean implements Serializable{
 	private String regDate,accountNum,money;
 
 	public void setRegDate(String regDate) {
