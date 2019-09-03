@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.bank.web.domains.CustomerBean;
+import com.bank.web.service.MemberService;
+import com.bank.web.serviceimpl.MemberServiceImpl;
 
 
 @WebServlet("/member.do")
@@ -23,13 +25,15 @@ public class MemberController extends HttpServlet {
 		String ssn = request.getParameter("ssn");
 		String name = request.getParameter("name");
 		String credit = request.getParameter("credit");
-		CustomerBean m = new CustomerBean();
-		m.setCredit(credit);
-		m.setId(id);
-		m.setName(name);
-		m.setPass(pass);
-		m.setSsn(ssn);
-		System.out.println("회원정보"+m.toString());
+		CustomerBean param = new CustomerBean();
+		param.setCredit(credit);
+		param.setId(id);
+		param.setName(name);
+		param.setPass(pass);
+		param.setSsn(ssn);
+		System.out.println("회원정보"+param.toString());
+		MemberService service = new MemberServiceImpl();
+		service.join(param);
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 

@@ -1,6 +1,8 @@
 package com.bank.web.controller;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -20,10 +22,11 @@ public class AccountController extends HttpServlet {
 		String money = request.getParameter("money");
 		
 		AccountBean a = new AccountBean();
-		service.createAccount(money);
-		
+//		service.createAccount(money);
+		RequestDispatcher rd = request.getRequestDispatcher("WEB-INF//views/account/account.jsp");
+		rd.forward(request, response);
 		System.out.println("계좌정보"+a.toString());
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+//		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

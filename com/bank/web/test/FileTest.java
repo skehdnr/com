@@ -12,7 +12,7 @@ import java.io.BufferedWriter;
 import java.io.BufferedReader;
 public class FileTest {
 	
-	public static final String FILE_PATH = String.format("C:%sUsers%suser%seclipse-jee%sjee-bitcamp%sWebContent%sresources%stxt%s",
+	public static final String FILE_PATH = String.format("C:%sUsers%suser%seclipse-jee%sjee-%sWebContent%sresources%stxt%s",
 												File.separator,
 												File.separator,
 												File.separator,
